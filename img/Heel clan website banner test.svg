@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3840"
+   height="2160"
+   viewBox="0 0 1016 571.5"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Heel clan website banner.svg"
+   inkscape:export-filename="..\..\..\..\..\HeelClanWebsite\img\Heel clan website banner test.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.26362494"
+     inkscape:cx="1727.8335"
+     inkscape:cy="1156.9467"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient891">
+      <stop
+         style="stop-color:#a602f2;stop-opacity:1;"
+         offset="0"
+         id="stop887" />
+      <stop
+         style="stop-color:#1bf28a;stop-opacity:1;"
+         offset="1"
+         id="stop889" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient891"
+       id="linearGradient893"
+       x1="22"
+       y1="28.387123"
+       x2="970.83868"
+       y2="557.0968"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0059244,0,0,1.0140633,-3.0109064,-2.0172513)" />
+    <filter
+       y="-0.04801451"
+       height="1.096029"
+       inkscape:menu-tooltip="Darkens the edge with an inner blur and adds a flexible glow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:label="Dark and Glow"
+       style="color-interpolation-filters:sRGB"
+       id="filter1018"
+       x="-0.01308277"
+       width="1.0261655">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="result6"
+         id="feGaussianBlur1008" />
+      <feComposite
+         result="result8"
+         in="SourceGraphic"
+         operator="atop"
+         in2="result6"
+         id="feComposite1010" />
+      <feComposite
+         result="result9"
+         operator="over"
+         in2="SourceAlpha"
+         in="result8"
+         id="feComposite1012" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 "
+         result="result10"
+         id="feColorMatrix1014" />
+      <feBlend
+         in="result10"
+         mode="normal"
+         in2="result6"
+         id="feBlend1016" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient893);fill-opacity:1;stroke:none;stroke-width:5.34451"
+       id="rect848"
+       width="1022.4608"
+       height="578.9541"
+       x="-3.0109062"
+       y="-1.2975935" />
+    <g
+       aria-label="HEEL"
+       id="text294"
+       style="font-size:423.333px;font-family:quantum;-inkscape-font-specification:quantum;fill:none;stroke:#e12fff;stroke-width:3.96875;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1018)">
+      <path
+         d="M -14.964217,541.96307 H 57.002395 V 440.78648 L -14.964217,368.81987 Z M 166.64564,251.1333 V 360.77655 H 111.61235 L 57.002395,306.16659 V 251.1333 h -71.966612 v 85.08993 l 96.943259,96.94326 h 84.666598 v 109.21992 h 71.96662 V 251.55663 Z"
+         id="path2220" />
+      <path
+         d="M 352.91191,469.99646 V 449.67648 L 280.9453,377.70987 V 542.38641 H 523.51511 V 470.4198 Z m 170.6032,-36.82997 V 361.19988 H 398.20854 L 360.5319,323.52324 H 523.51511 V 251.55663 H 280.52197 v 93.97993 l 88.05326,88.05326 z"
+         id="path2222" />
+      <path
+         d="M 638.23823,469.99646 V 449.67648 L 566.27162,377.70987 V 542.38641 H 808.84144 V 470.4198 Z M 808.84144,433.16649 V 361.19988 H 683.53487 L 645.85823,323.52324 H 808.84144 V 251.55663 H 565.84829 v 93.97993 l 88.05327,88.05326 z"
+         id="path2224" />
+      <path
+         d="M 934.57131,469.99646 H 923.56465 V 251.1333 h -71.96661 v 290.82977 h 154.93986 l -70.27326,-70.27328 z m 33.01997,0 71.96662,71.96661 h 14.3933 v -71.96661 z"
+         id="path2226" />
+    </g>
+  </g>
+</svg>
