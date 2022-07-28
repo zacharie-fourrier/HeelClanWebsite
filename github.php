@@ -1,1 +1,4 @@
-<?php `git pull`; ?>
+<?php
+    `git pull`;
+    echo "ping";
+?>
