@@ -1,3 +1,4 @@
 <? php 
-`time /T />/> log.txt`;
+$dir = `dir`;
+echo "$dir";
 `git pull`; ?>
