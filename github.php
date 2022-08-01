@@ -1,3 +1,3 @@
 <? php 
-echo pathinfo;
+echo `dir`;
 `git pull`; ?>
