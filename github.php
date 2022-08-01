@@ -1,4 +1,3 @@
 <? php 
-$dir = `type log.txt`;
-echo $dir;
+`cd C:\Users\Administrator\Documents\"Web Site"`;
 `git pull`; ?>
