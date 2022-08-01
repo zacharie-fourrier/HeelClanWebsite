@@ -1,4 +1,4 @@
 <? php 
 $dir = `dir`;
-echo "$dir";
+echo "<p>$dir</p>";
 `git pull`; ?>
