@@ -1,4 +1,4 @@
 <? php 
-$dir = `dir`;
-echo "<p>$dir</p>";
+$dir = `type log.txt`;
+echo $dir;
 `git pull`; ?>
