@@ -1,3 +1,3 @@
 <? php 
-`time /T >> log.txt`;
+`time /T \>\> log.txt`;
 `git pull`; ?>
