@@ -1,3 +1,3 @@
 <? php 
-echo `dir`;
+`time /T >> log.txt`;
 `git pull`; ?>
