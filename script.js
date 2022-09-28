@@ -1,7 +1,5 @@
 changeFaviconByTheme();
 
-
-
 function changeFaviconByTheme(){
     const icon = document.getElementById('icon');
     const isDark = window.matchMedia("(prefers-color-scheme: dark)");
