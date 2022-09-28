@@ -1,11 +1,11 @@
 @media (prefers-color-scheme: dark) {
-    .navbar {background: #7712a6};
-    body {background: #1e1e1e};
+    .navbar {background: #7712a6}
+    body {background: #1e1e1e}
 }
 
 @media (prefers-color-scheme: light) {
-    .navbar {background: #a602f2};
-    body {background: #f2f2f2};
+    .navbar {background: #a602f2}
+    body {background: #f2f2f2}
 }
 
 @font-face {
