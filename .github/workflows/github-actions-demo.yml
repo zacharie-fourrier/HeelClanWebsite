@@ -9,13 +9,12 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted, windows]
+    runs-on: windows-2022
     steps:
       -name: Path
       run: echo dir
       - name: CD
       run: cd "C:\\Users\\Administrator\\Documents\\Web\ Site"
-      shell: cmd
       - name: Pull
       run: git pull
-      shell: cmd
+      - shell: cmd
