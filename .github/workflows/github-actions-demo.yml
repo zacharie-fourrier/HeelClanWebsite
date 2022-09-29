@@ -11,10 +11,9 @@ jobs:
   build:
     runs-on: windows-2022
     steps:
-      -name: Path
-      run: echo dir
-      - name: CD
-      run: cd "C:\\Users\\Administrator\\Documents\\Web\ Site"
       - name: Pull
-      run: git pull
+      run: |
+        echo dir
+        cd "C:\\Users\\Administrator\\Documents\\Web\ Site"
+        git pull
       - shell: cmd
