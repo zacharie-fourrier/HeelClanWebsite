@@ -11,10 +11,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Get dir
-        run: cd "..\..\..\.."
-      - name: Change dir
-        run: |
-          dir
+      - name: CD
+      run: cd "C:\\Users\\Administrator\\Documents\\Web Site"
       - name: Pull
-        run: git pull
+      run: git pull
