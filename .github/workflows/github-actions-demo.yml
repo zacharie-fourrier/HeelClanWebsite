@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Pull
         run: |
-          cd
+          echo Hostname:
+          hostname
           cd "C:\\Users\\Administrator\\Documents\\Web Site"
           git pull
         shell: cmd
