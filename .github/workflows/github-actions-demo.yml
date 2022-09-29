@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hoste, windows]
+    runs-on: [self-hosted, windows]
     steps:
       -name: Path
       run: echo dir
