@@ -14,6 +14,7 @@ jobs:
       - name: Get dir
         run: cd "..\..\..\.."
       - name: Change dir
-        run: dir
+        run: |
+          dir
       - name: Pull
         run: git pull
