@@ -26,7 +26,6 @@ jobs:
       #- uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Pull
       - run: dir
 	    - run: cd "C:\Users\Administrator\Documents\Web Site"
 	    - run: git pull
