@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Pull
         run: |
-          echo dir
-          cd "C:\\Users\\Administrator\\Documents\\Web\ Site"
+          cd
+          cd "C:\\Users\\Administrator\\Documents\\Web Site"
           git pull
