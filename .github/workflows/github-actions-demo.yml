@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Pull
-        run: ./pull.bat
+        run: git pull
