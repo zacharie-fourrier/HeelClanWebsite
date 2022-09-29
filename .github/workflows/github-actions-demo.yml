@@ -16,3 +16,4 @@ jobs:
           cd
           cd "C:\\Users\\Administrator\\Documents\\Web Site"
           git pull
+        shell: cmd
