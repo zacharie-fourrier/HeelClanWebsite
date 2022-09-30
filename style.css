@@ -34,7 +34,7 @@
 .header {
     text-align: center;
     padding: 0px;
-    background-attachment: scroll;
+    top: 60px;
 }
 
 .navbar {
