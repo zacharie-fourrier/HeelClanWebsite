@@ -1,11 +1,23 @@
 @media (prefers-color-scheme: dark) {
-    .navbar {background: #7712a6}
+    .navbar {background: #1e1e1e}
     body {background: #1e1e1e}
+    .menu a:hover:not(.active){
+        color: #7712a6;
+        transition: 0.3s;
+    }
+    .active{background-color: #7712a6}
+    .menu a{color: #f2f2f2}
 }
 
 @media (prefers-color-scheme: light) {
-    .navbar {background: #a602f2}
+    .navbar {background: #f2f2f2}
     body {background: #f2f2f2}
+    .menu a:hover:not(.active){
+        color: #a602f2;
+        transition: 0.3s;
+    }
+    .menu a{color: #1e1e1e}
+    .active{background-color: #a602f2}
 }
 
 @font-face {
@@ -16,16 +28,21 @@
 .header {
     text-align: center;
     padding: 0px;
+    background-attachment: scroll;
 }
 
 .navbar {
     height: 60px;
     box-shadow: 0px 1px 10px;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 body {
     margin: 0px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 html {
@@ -36,11 +53,12 @@ html {
 
 .menu a {
     float: left;
-    color: #f2f2f2;
     text-align: center;
     text-decoration: none;
     padding: 14px 16px;
     font-size: 17px;
+    height: 100%;
+    transition: 0.3s;
 }
 
 .logo {
