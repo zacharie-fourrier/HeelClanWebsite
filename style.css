@@ -16,6 +16,17 @@
         background-color:#000000;
     }
     ::-webkit-scrollbar-track {background: #202020}
+    accent {color: #7712a6}
+    #l_dis {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
+    #dis {color: #ffffff}
+    #l_twi {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
+    #twi {color: #ffffff}
+    #l_ins {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
+    #ins {color: #ffffff}
+    #l_ttv {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
+    #ttv {color: #ffffff}
+    #l_ytb {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
+    #ytb {color: #ffffff}
 }
 
 @media (prefers-color-scheme: light) {
@@ -36,6 +47,7 @@
         background-color: #ffffff;
     }
     ::-webkit-scrollbar-track {background: #b5b5b5}
+    accent {color: #a602f2}
 }
 
 @font-face {
@@ -66,7 +78,14 @@ html {
     padding: 0px;
     font-family: Oswald;
     font-weight: 700;
-    z-index: 2;
+}
+
+.menu {
+    display: inline;
+    float: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .menu a {
@@ -87,6 +106,7 @@ html {
 }
 
 .logo {
+    display: inline;
     float: left;
     font-size: 25px;
     font-weight: 700;
@@ -97,6 +117,7 @@ html {
     font-weight: 400;
     display: inline-block;
     width: 100%;
+    bottom: 0px;
 }
 
 .legal p {
@@ -110,7 +131,7 @@ strong {
 ::-webkit-scrollbar {
     position: absolute;
     z-index: 1;
-    width: 10px;
+    width: 8px;
     overflow: overlay;
     display: block;
 }
@@ -134,5 +155,78 @@ strong {
 
 ::-webkit-scrollbar-thumb:hover {
     opacity: 1;
+    transition: 0.3s;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+accent {
+    font-weight: 700;
+}
+
+.info {
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+}
+
+.socials {
+    display: inline-block;
+    position: relative;
+    margin: 20px 70px 50px 700px;
+}
+
+.presentation {
+    display: inline-block;
+    position: relative;
+    margin: 20px 70px 50px 70px;
+}
+
+#dis {
+    transition: 0.3s;
+}
+
+#dis:hover {
+    color: #7289DA;
+    transition: 0.3s;
+}
+
+#twi {
+    transition: 0.3s;
+}
+
+#twi:hover {
+    color: #1DA1F2;
+    transition: 0.3s;
+}
+
+#ins {
+    transition: 0.3s;
+}
+
+#ins:hover {
+    color: #E1306C;
+    transition: 0.3s;
+}
+
+#ttv {
+    transition: 0.3s;
+}
+
+#ttv:hover {
+    color: #9146FF;
+    transition: 0.3s;
+}
+
+#ytb {
+    transition: 0.3s;
+}
+
+#ytb:hover {
+    color: #FF0000;
     transition: 0.3s;
 }

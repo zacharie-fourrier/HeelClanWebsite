@@ -17,24 +17,12 @@
                 <img src="/img/Icon White.svg" height="auto" width="6%">
             </div>
             <div class="menu">
-                <a href="/index.html">Home</a>
-                <a href="/teams/index.html" class="active">Teams</a>
-                <a href="/results/index.html">Results</a>
-                <a href="/booking/index.html">Book a match</a>
-                <a href="/recruitment/index.html">Join us</a>
+                <a href="/">Home</a>
+                <a href="/teams/" class="active">Teams</a>
+                <a href="/results/">Results</a>
+                <a href="/booking/">Book a match</a>
+                <a href="/recruitment/">Join us</a>
             </div>
         </div>
-        <div class="header">
-            <img src="/img/Heel clan website banner test.png" height="auto" width="70%" href="/index.html">
-        </div>
-        <p>
-            bruh
-        </br>bruh
-        </br>bruh
-        </br>bruh
-        </br>bruh
-        </br>bruh
-        </br>bruh
-        </p>
     </body>
 </html>
