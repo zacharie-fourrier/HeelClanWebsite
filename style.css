@@ -3,7 +3,7 @@
         background: #1e1e1e;
         box-shadow: 0px 1px 10px #000000;
     }
-    .body {color: #fff}
+    .content {color: #fff}
     body {background: #1e1e1e}
     .menu a:hover:not(.active){
         color: #7712a6;
@@ -34,7 +34,7 @@
         background: #f2f2f2;
         box-shadow: 0px 1px 10px #808080;
     }
-    .body {color: #000}
+    .content {color: #000}
     body {background: #f2f2f2}
     .menu a:hover:not(.active){
         color: #a602f2;
@@ -66,6 +66,7 @@
     display: block;
     position: fixed;
     width: 100%;
+    z-index: 10;
     top: 0;
 }
 
@@ -113,11 +114,17 @@ html {
     padding: 14px 16px;
 }
 
+php {
+    display: inline-block;
+    color: inherit;
+}
+
 .footer {
     font-weight: 400;
     display: inline-block;
     width: 100%;
     bottom: 0px;
+    top: 50%;
 }
 
 .legal p {
@@ -228,5 +235,53 @@ accent {
 
 #ytb:hover {
     color: #FF0000;
+    transition: 0.3s;
+}
+
+.team_pannel {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0% 50px 10%;
+    width: 20%;
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+
+.team_name {
+    position: absolute;
+    text-align: center;
+    font-variant: small-caps;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: #000;
+}
+
+.team_game {
+    position: absolute;
+    text-align: center;
+    font-variant: small-caps;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #000;
+}
+
+.team_member {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.team_pannel:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
     transition: 0.3s;
 }

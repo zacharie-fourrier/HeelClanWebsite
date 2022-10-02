@@ -8,20 +8,91 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
-        <script src="/script.js"></script>
-        <title>Heel Clan - Teams</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <script src="/Favicon.js"></script>
+        <title>Heel Clan - Home</title>
     </head>
     <body>
         <div class="navbar">
             <div class="logo">
-                <img src="/img/Icon White.svg" height="auto" width="6%">
+                <a href="/"><img src="/img/Icon White.svg" height="auto" width="6%" id="homeLogo"></a>
+                <script src="/Logo.js"></script>
             </div>
             <div class="menu">
                 <a href="/">Home</a>
                 <a href="/teams/" class="active">Teams</a>
-                <a href="/results/">Results</a>
-                <a href="/booking/">Book a match</a>
-                <a href="/recruitment/">Join us</a>
+                <a href="/results/"><strike>Results</strike></a>
+                <a href="/booking/"><strike>Book a match</strike></a>
+                <a href="/recruitment/"><strike>Join us</strike></a>
+            </div>
+            <div class="account">
+                <a href="/account/"></a>
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                <br>
+                <br>
+            </p>
+            <?php 
+                $host = "91.170.154.154:3306";
+                $user = "HEELZacky";
+                $pass = "F2F4Astg12";
+                $db = mysqli_connect($host, $user, $pass, "heel_db");
+
+                $sql = 
+                'SELECT t_id, t_banner, t_name, t_game FROM teams';
+
+                $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+
+                while($data = mysqli_fetch_assoc($req)) {
+
+                    echo '<div class="team_pannel">';
+                    echo '<img src="'.$data['t_banner'].'" height="auto" width="100%">';
+                    echo '<div class="team_name">'.$data['t_name'].'</div>';
+                    echo '<div class="team_game">'.$data['t_game'].'</div>';
+
+                    $sql2 =
+                    'SELECT teams.t_game, members.m_tag, team_members.m_role
+                    FROM teams
+                    INNER JOIN team_members ON teams.t_id = team_members.t_id
+                    INNER JOIN members ON team_members.m_id = members.m_id
+                    WHERE teams.t_id = '.$data['t_id'];
+
+                    $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
+
+                    while($data2 = mysqli_fetch_assoc($req2)) {
+                        echo '<div class="team_member">'.$data2['m_tag'].' - '.$data2['m_role'].'</div>';
+                    }
+
+                    echo '</div>';
+                }
+            ?>
+        </div>
+        <div class="footer">
+            <div class="info">
+                <div class="socials">
+                    <accent>Check out our socials !</accent>
+                    <br><a href="https://discord.gg/ECqAJNmvef" id="dis"><img src="/img/discord_logo.svg" height="20px" width="20px" id="l_dis"> Discord</a>
+                    <br><a href="" id="twi"><img src="/img/twitter_logo.svg" height="20px" width="20px" id="l_twi"> Twitter</a>
+                    <br><a href="" id="ins"><img src="/img/instagram_logo.svg" height="20px" width="20px" id="l_ins"> Instagram</a>
+                    <br><a href="" id="ttv"><img src="/img/twitch_logo.svg" height="20px" width="20px" id="l_ttv"> Twitch</a>
+                    <br><a href="https://www.youtube.com/channel/UCUad12eHavWluVfnzjgp6FA" id="ytb"><img src="/img/youtube_logo.svg" height="20px" width="20px" id="l_ytb"> Youtube</a>
+                </div>
+                <div class="presentation">
+                    <accent>Heel Clan</accent>
+                    <br><a href="/">News</a>
+                    <br><a href="/teams/">Teams</a>
+                    <br><a href="/results/">Results</a>
+                    <br><a href="/booking/">Book a match</a>
+                    <br><a href="/recruitment/">Join us</a>
+                </div>
+            </div>
+            <div class="legal">
+                <p style="text-align:left;float:left;">© 2022, EU - <strong>Heel Clan</strong></p>
+                <p style="text-align:right;float:right;">Web design by <a href="http://heelsoft.tk"><strong>Heel Software Services</strong></a></p>
             </div>
         </div>
     </body>
