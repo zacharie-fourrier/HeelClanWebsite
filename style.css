@@ -244,22 +244,29 @@ accent {
     z-index: 1;
     margin: 20px 0% 50px 10%;
     width: 20%;
+    filter: grayscale(1);
     transition: 0.3s;
 }
 
 .team_name {
     position: absolute;
+    text-align: center;
+    font-variant: small-caps;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 28px;
     color: #000;
 }
 
 .team_game {
     position: absolute;
+    text-align: center;
+    font-variant: small-caps;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 20px;
     color: #000;
 }
 
@@ -275,5 +282,6 @@ accent {
 
 .team_pannel:hover {
     transform: scale(1.1);
+    filter: grayscale(0);
     transition: 0.3s;
 }
