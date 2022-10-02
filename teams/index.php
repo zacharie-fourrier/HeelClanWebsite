@@ -60,7 +60,8 @@
                     FROM teams
                     INNER JOIN team_members ON teams.t_id = team_members.t_id
                     INNER JOIN members ON team_members.m_id = members.m_id
-                    WHERE teams.t_id = '.$data['t_id'];
+                    WHERE teams.t_id = '.$data['t_id'].'
+                    ORDER BY m_index DESC';
 
                     $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
 
