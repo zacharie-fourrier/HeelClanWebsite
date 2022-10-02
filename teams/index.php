@@ -43,7 +43,7 @@
                 $db = mysqli_connect($host, $user, $pass, "heel_db");
 
                 $sql = 
-                'SELECT t_id, t_banner, t_name, t_game FROM teams';
+                'SELECT t_id, t_banner, t_name, t_game_logo FROM teams';
 
                 $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
@@ -52,7 +52,8 @@
                     echo '<div class="team_pannel">';
                     echo '<img src="'.$data['t_banner'].'" height="auto" width="100%">';
                     echo '<div class="team_name">'.$data['t_name'].'</div>';
-                    echo '<div class="team_game">'.$data['t_game'].'</div>';
+                    echo '<img src="'.$data['t_game_logo'].'" class="team_game" width="50%", height="auto">';
+                    echo '<div class="team_member"><p>';
 
                     $sql2 =
                     'SELECT teams.t_game, members.m_tag, team_members.m_role
@@ -63,10 +64,14 @@
 
                     $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
 
-                    while($data2 = mysqli_fetch_assoc($req2)) {
-                        echo '<div class="team_member">'.$data2['m_tag'].' - '.$data2['m_role'].'</div>';
-                    }
+                    $i = 0;
 
+                    while($data2 = mysqli_fetch_assoc($req2)) {
+                        if ($i <= 7) {
+                            echo $data2['m_tag'].' - '.$data2['m_role'].'<br>';
+                        }
+                    }
+                    echo '</p></div>';
                     echo '</div>';
                 }
             ?>
