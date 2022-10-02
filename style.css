@@ -90,7 +90,7 @@ html {
 }
 
 .menu a {
-    float: left;
+    float: left; /*maybe not put this here, idk*/
     text-align: center;
     text-decoration: none;
     padding: 14px 16px;
