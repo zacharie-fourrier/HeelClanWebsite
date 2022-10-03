@@ -82,21 +82,25 @@ html {
 }
 
 .menu {
-    display: inline;
-    float: center;
-    align-items: center;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
 }
 
 .menu a {
-    float: left; /*maybe not put this here, idk*/
-    text-align: center;
+    position: relative;
     text-decoration: none;
-    padding: 14px 16px;
-    font-size: 17px;
-    height: 32px;
+    vertical-align: middle;
+    padding: 20px;
+    font-size: 20px;
     transition: 0.3s;
+}
+
+.active {
     border-radius: 0px 0px 5px 5px;
     transition: 0.3s;
 }
