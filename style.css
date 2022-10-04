@@ -72,7 +72,6 @@
 
 body {
     margin: 0px;
-    /*overflow: hidden;*/
 }
 
 html {
@@ -83,21 +82,21 @@ html {
 
 .menu {
     position: absolute;
+    display: inline-block;
     text-align: center;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
 }
 
 .menu a {
     position: relative;
     text-decoration: none;
-    vertical-align: middle;
-    padding: 20px;
     font-size: 20px;
     transition: 0.3s;
+    padding: 15px 20px 15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .active {
@@ -263,18 +262,17 @@ accent {
     filter: drop-shadow(0px 0px 5px #000);
     color: #fff;
     transition: 0.3s;
+    overflow-wrap: normal;
 }
 
 .team_game {
     position: absolute;
     text-align: center;
-    font-variant: small-caps;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     filter: invert(94%) sepia(94%) saturate(25%) hue-rotate(359deg) brightness(105%) contrast(106%) drop-shadow(0px 0px 10px #000);
-    color: #fff;
     transition: 0.3s;
 }
 
