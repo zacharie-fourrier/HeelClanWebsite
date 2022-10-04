@@ -22,10 +22,10 @@
             </div>
             <div class="menu">
                 <a href="/">Home</a>
-                <a href="/teams/" class="active">Teams</a>
+                <a href="/teams/">Teams</a>
                 <a href="/results/"><strike>Results</strike></a>
                 <a href="/booking/"><strike>Book a match</strike></a>
-                <a href="/recruitment/">Join us</a>
+                <a href="/recruitment/" class="active">Join us</a>
             </div>
             <div class="account">
                 <a href="/account/"></a>
@@ -39,39 +39,7 @@
             <?php 
                 include('/config.php');
 
-                $sql = 
-                'SELECT t_id, t_banner, t_name, t_game_logo FROM teams';
-
-                $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-                while($data = mysqli_fetch_assoc($req)) {
-
-                    echo '<div class="team_pannel">';
-                    echo '<img src="'.$data['t_banner'].'" height="auto" width="100%">';
-                    echo '<div class="team_name">'.$data['t_name'].'</div>';
-                    echo '<img src="'.$data['t_game_logo'].'" class="team_game" width="50%", height="auto">';
-                    echo '<div class="team_member"><p>';
-
-                    $sql2 =
-                    'SELECT teams.t_game, members.m_tag, team_members.m_role
-                    FROM teams
-                    INNER JOIN team_members ON teams.t_id = team_members.t_id
-                    INNER JOIN members ON team_members.m_id = members.m_id
-                    WHERE teams.t_id = '.$data['t_id'].'
-                    ORDER BY m_index DESC';
-
-                    $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
-
-                    $i = 0;
-
-                    while($data2 = mysqli_fetch_assoc($req2)) {
-                        if ($i <= 7) {
-                            echo $data2['m_tag'].' - '.$data2['m_role'].'<br>';
-                        }
-                    }
-                    echo '</p></div>';
-                    echo '</div>';
-                }
+                
             ?>
         </div>
         <div class="footer">
