@@ -37,7 +37,11 @@
                 <br>
             </p>
             <?php 
-                include('/config.php');
+                $DB_SERVER='91.170.154.154:3306';
+                $DB_USERNAME='HEELZacky';
+                $DB_PASSWORD='F2F4Astg12';
+                $DB_DATABASE='heel_db';
+                $db = mysqli_connect($DB_SERVER,$DB_USERNAME,$DB_PASSWORD,$DB_DATABASE);
 
                 $sql = 
                 'SELECT t_id, t_banner, t_name, t_game_logo FROM teams';
