@@ -80,6 +80,10 @@ html {
     font-weight: 700;
 }
 
+.content {
+    padding: 100px 200px;
+}
+
 .menu {
     position: absolute;
     display: inline-block;

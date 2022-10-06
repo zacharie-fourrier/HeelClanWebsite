@@ -32,19 +32,30 @@
             </div>
         </div>
         <div class="content">
-            <p>
-                <br>
-                <br>
-            </p>
-            <?php 
-                define('DB_SERVER', '91.170.154.154:3306');
-                define('DB_USERNAME', 'HEELZacky');
-                define('DB_PASSWORD', 'F2F4Astg12');
-                define('DB_DATABASE', 'heel_db');
-                $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+            <form>
+                <label for="name">Full Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Your name.."><br>
+                <label for="tag">In-game name</label><br>
+                <input type="text" id="tag" name="tag" placeholder="Your in-game name.."><br>
+                <label for="team">Team</label><br>
+                <select id="team" name="team"><br>
+                <?php 
+                    define('DB_SERVER', '91.170.154.154:3306');
+                    define('DB_USERNAME', 'HEELZacky');
+                    define('DB_PASSWORD', 'F2F4Astg12');
+                    define('DB_DATABASE', 'heel_db');
+                    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
-                
-            ?>
+                    $sql =
+                    "SELECT t_name FROM teams";
+
+                    $result = mysqli_query($db, $sql);
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<option value='" . $row['t_name'] . "'>" . $row['t_name'] . "</option>";
+                    }
+                ?>
+                </select>
+            </form>
         </div>
         <div class="footer">
             <div class="info">
