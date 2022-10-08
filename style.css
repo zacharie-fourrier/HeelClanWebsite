@@ -27,6 +27,11 @@
     #ttv {color: #ffffff}
     #l_ytb {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
     #ytb {color: #ffffff}
+    input {background: #0f0f0f}
+    select {
+        background: #0f0f0f;
+        color: #f0f0f0;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -48,6 +53,11 @@
     }
     ::-webkit-scrollbar-track {background: #b5b5b5}
     accent {color: #a602f2}
+    input {background: #f0f0f0}
+    select {
+        background: #f0f0f0;
+        color: #0f0f0f;
+    }
 }
 
 @font-face {
@@ -80,8 +90,39 @@ html {
     font-weight: 700;
 }
 
-.content {
-    padding: 100px 200px;
+form {
+    position: relative;
+    display: block;
+    margin: 10% 20%;
+}
+
+input {
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    border: none;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 16px; 
+}
+
+select {
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    border: none;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font: inherit;
+    font-weight: 400;
+}
+
+label {
+    padding-left: 32px;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .menu {

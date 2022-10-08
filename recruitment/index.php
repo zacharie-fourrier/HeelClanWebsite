@@ -34,11 +34,11 @@
         <div class="content">
             <form>
                 <label for="name">Full Name</label><br>
-                <input type="text" id="name" name="name" placeholder="Your name.."><br>
+                <input type="text" id="name" name="name" placeholder="Your name.."><br><br>
                 <label for="tag">In-game name</label><br>
-                <input type="text" id="tag" name="tag" placeholder="Your in-game name.."><br>
+                <input type="text" id="tag" name="tag" placeholder="Your in-game name.."><br><br>
                 <label for="team">Team</label><br>
-                <select id="team" name="team"><br>
+                <select id="team" name="team"><br><br>
                 <?php 
                     define('DB_SERVER', '91.170.154.154:3306');
                     define('DB_USERNAME', 'HEELZacky');
