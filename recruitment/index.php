@@ -67,17 +67,24 @@
                     </div>
                     <div>
                         <input type="radio" id="other" class="radio" name="referer" value="other">
-                        <label for="other">Other : </label>
+                        <label for="other">Other :</label>
                         
                         <div>
-                            <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled">
+                            <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled" placeholder="Type here...">
                         </div>
                         <script type="text/javascript">
-                            $(".radio").click(function() {
-                                $("#referertxt").attr("disabled", true);
-                                if ($("input[name=referer]:checked").val() == "other") {
-                                    $("#referertxt").attr("disabled", false);
-                                }   
+                            var referer = document.getElementById("other");
+                            var referertxt = document.getElementById("referertxt");
+                            referer.addEventListener("click", function() {
+                                referertxt.disabled = false;
+                            });
+                            var noone = document.getElementById("none");
+                            noone.addEventListener("click", function() {
+                                referertxt.disabled = true;
+                            });
+                            var ag = document.getElementById("ag");
+                            ag.addEventListener("click", function() {
+                                referertxt.disabled = true;
                             });
                         </script>
                     </div>
