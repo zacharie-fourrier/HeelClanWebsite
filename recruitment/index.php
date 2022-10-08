@@ -54,7 +54,34 @@
                         echo "<option value='" . $row['t_name'] . "'>" . $row['t_name'] . "</option>";
                     }
                 ?>
-                </select>
+                </select><br><br>
+                <fieldset>
+                    <legend>Who referred you to us ?</legend>
+                    <div>
+                        <input type="radio" id="none" class="radio" name="referer" value="noone" checked>
+                        <label for="noone">No one</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ag" class="radio" name="referer" value="alligator">
+                        <label for="alligator">Alligator Gaming</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="other" class="radio" name="referer" value="other">
+                        <label for="other">Other : </label>
+                        
+                        <div>
+                            <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled">
+                        </div>
+                        <script type="text/javascript">
+                            $(".radio").click(function() {
+                                $("#referertxt").attr("disabled", true);
+                                if ($("input[name=referer]:checked").val() == "other") {
+                                    $("#referertxt").attr("disabled", false);
+                                }   
+                            });
+                        </script>
+                    </div>
+                </fieldset>
             </form>
         </div>
         <div class="footer">
