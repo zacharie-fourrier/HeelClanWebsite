@@ -51,7 +51,11 @@
     input[type="button"] {
         background: #7712a6;
         color: #FFFFFF;
-    }
+    }    
+    .request-box {background-color: #0f0f0f}
+    .request-header {background-color: #555555}
+    .request-footer {background-color: #171717}
+    .request-footer input {background-color: #171717}
 }
 
 @media (prefers-color-scheme: light) {
@@ -98,6 +102,10 @@
         background: #a602f2;
         color: #000000;
     }
+    .request-box {background-color: #e0e0e0}
+    .request-header {background-color: #aaaaaa}
+    .request-footer {background-color: #e8e8e8}
+    .request-footer input {background-color: #e8e8e8}
 }
 
 @font-face {
@@ -653,12 +661,10 @@ accent {
 .request-box {
     margin: 16px 32px;
     border-radius: 10px;
-    background-color: #e0e0e0;
     font-size: 20px;
 }
 
 .request-header {
-    background-color: #aaaaaa;
     padding: 10px 16px;
     border-radius: 10px 10px 0 0;
 }
@@ -671,13 +677,11 @@ accent {
 }
 
 .request-footer {
-    background-color: #e8e8e8;
     padding: 10px 16px;
     border-radius: 0 0 10px 10px;
 }
 
 .request-footer input {
-    background-color: #e8e8e8;
     border: 3px solid;
     border-radius: 20px;
     height: 40px;
