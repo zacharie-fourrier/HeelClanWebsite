@@ -57,21 +57,21 @@
                 </select><br><br>
                 <fieldset>
                     <legend>Who referred you to us ?</legend>
-                    <div>
-                        <input type="radio" id="none" class="radio" name="referer" value="noone" checked>
-                        <label for="noone">No one</label>
+                    <div class="label">
+                        <input type="radio" id="none" name="referer" value="none" checked>
+                        <label for="none">No one</label>
+                        <div class="check"><div class="inside"></div></div>
                     </div>
-                    <div>
-                        <input type="radio" id="ag" class="radio" name="referer" value="alligator">
-                        <label for="alligator">Alligator Gaming</label>
+                    <div class="label">
+                        <input type="radio" id="ag" name="referer" value="ag">
+                        <label for="ag">Alligator Gaming</label>
+                        <div class="check"><div class="inside"></div></div>
                     </div>
-                    <div>
-                        <input type="radio" id="other" class="radio" name="referer" value="other">
-                        <label for="other">Other :</label>
-                        
-                        <div>
-                            <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled" placeholder="Type here...">
-                        </div>
+                    <div class="label">
+                        <input type="radio" id="other" name="referer" value="other">
+                        <label for="other">Other : <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled"></label>
+                        <div class="check"><div class="inside"></div></div>
+
                         <script type="text/javascript">
                             var referer = document.getElementById("other");
                             var referertxt = document.getElementById("referertxt");

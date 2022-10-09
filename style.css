@@ -32,6 +32,15 @@
         background: #0f0f0f;
         color: #f0f0f0;
     }
+    input.inputCustom:not(:disabled) {border-bottom: 1px solid #7712a6}
+    input.inputCustom:disabled {border-bottom: 1px solid #f0f0f0}
+    input[type=radio]:checked ~ .check {border: 2px solid #7712a6}
+    input[type=radio]:checked ~ .check::before{background: #7712a6}
+    input[type=radio]:checked ~ label{color: #7712a6}
+    .label:hover label{color: #FFFFFF}
+    .label:hover .check {border: 2px solid #FFFFFF}
+    .label{color: #AAAAAA}
+    .label .check {border: 2px solid #AAAAAA}
 }
 
 @media (prefers-color-scheme: light) {
@@ -58,6 +67,15 @@
         background: #f0f0f0;
         color: #0f0f0f;
     }
+    input.inputCustom:not(:disabled) {border-bottom: 1px solid #a602f2}
+    input.inputCustom:disabled {border-bottom: 1px solid #808080}
+    input[type=radio]:checked ~ .check {border: 2px solid #a602f2}
+    input[type=radio]:checked ~ .check::before{background: #a602f2}
+    input[type=radio]:checked ~ label{color: #a602f2}
+    .label:hover label{color: #000000}
+    .label:hover .check {border: 2px solid #000000}
+    .label{color: #555555}
+    .label .check {border: 2px solid #555555}
 }
 
 @font-face {
@@ -104,9 +122,11 @@ input {
     font-weight: 300;
     font-size: 16px;
     padding-left: 16px;
+    color: inherit;
+    font-family: inherit;
 }
 
-input.radio {
+input[type="radio"] {
     width: 16px;
     height: 16px;
     display: inline;
@@ -115,17 +135,103 @@ input.radio {
     font-weight: 300;
     font-size: 16px;
     padding-left: 16px;
+    cursor: inherit;
+}
+
+.label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 16px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.label label {
+    font-weight: inherit;
+}
+
+fieldset {
+    border: none;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+  
+.label input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+  
+.label label{
+    display: block;
+    position: relative;
+    font-weight: 300;
+    margin: 10px 8px;
+    z-index: 8;
+    cursor: pointer;
+    transition: border .3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+  
+.label .check{
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    height: 16px;
+    width: 16px;
+    top: 15px;
+    left: 10px;
+    z-index: 5;
+    transition: border .3s linear;
+    -webkit-transition: border .3s linear;
+}
+  
+.label .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+    top: 4px;
+    left: 4px;
+    margin: auto;
+    transition: background 0.3s linear;
+    -webkit-transition: background 0.3s linear;
 }
 
 input.inputCustom {
-    width: 30%;
-    height: 32px;
+    width: 60%;
+    height: 16px;
     border: none;
     display: inline;
     font-weight: 300;
     font-size: 16px;
-    padding-left: 16px;
+    padding-left: 4px;
+    border-radius: 0;
     background: none;
+    color: inherit;
+}
+
+input.inputCustom:focus {
+    outline: none;
+}
+
+input.inputCustom:not(:disabled) {
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+    transform-origin:  0% 50%;
+}
+
+input.inputCustom:disabled {
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin:  0% 50%;
+    border-bottom: none;
 }
 
 select {
@@ -142,10 +248,19 @@ select {
 }
 
 label {
-    padding-left: 32px;
+    padding-left: 16px;
     font-weight: 400;
     font-size: 18px;
     display: inline;
+    cursor: inherit;
+}
+
+legend {
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    display: inline;
+    cursor: inherit;
 }
 
 .menu {
@@ -268,12 +383,25 @@ accent {
     transition: 0.3s;
 }
 
+#l_dis {
+    transition: 0.3s;
+}
+
 #dis:hover {
     color: #7289DA;
     transition: 0.3s;
 }
 
+#dis:hover > #l_dis {
+    filter: invert(60%) sepia(10%) saturate(2476%) hue-rotate(190deg) brightness(90%) contrast(89%);
+    transition: 0.3s;
+}
+
 #twi {
+    transition: 0.3s;
+}
+
+#l_twi {
     transition: 0.3s;
 }
 
@@ -282,7 +410,16 @@ accent {
     transition: 0.3s;
 }
 
+#twi:hover > #l_twi {
+    filter: invert(57%) sepia(100%) saturate(2437%) hue-rotate(176deg) brightness(94%) contrast(101%);
+    transition: 0.3s;
+}
+
 #ins {
+    transition: 0.3s;
+}
+
+#l_ins {
     transition: 0.3s;
 }
 
@@ -291,7 +428,16 @@ accent {
     transition: 0.3s;
 }
 
+#ins:hover > #l_ins {
+    filter: invert(30%) sepia(35%) saturate(4082%) hue-rotate(317deg) brightness(90%) contrast(95%);
+    transition: 0.3s;
+}
+
 #ttv {
+    transition: 0.3s;
+}
+
+#l_ttv {
     transition: 0.3s;
 }
 
@@ -300,12 +446,26 @@ accent {
     transition: 0.3s;
 }
 
+#ttv:hover > #l_ttv {
+    filter: invert(64%) sepia(98%) saturate(6782%) hue-rotate(250deg) brightness(103%) contrast(101%);
+    transition: 0.3s;
+}
+
 #ytb {
+    transition: 0.3s;
+}
+
+#l_ytb {
     transition: 0.3s;
 }
 
 #ytb:hover {
     color: #FF0000;
+    transition: 0.3s;
+}
+
+#ytb:hover > #l_ytb {
+    filter: invert(22%) sepia(87%) saturate(6853%) hue-rotate(357deg) brightness(92%) contrast(121%);
     transition: 0.3s;
 }
 
