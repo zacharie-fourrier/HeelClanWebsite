@@ -57,7 +57,6 @@
                 $text = preg_replace($regex2, '\"', $text);
 
                 $ip = $_SERVER['REMOTE_ADDR'];
-                $serverName = gethostname();
 
                 $DB_SERVER = '91.170.154.154:3306';
                 $DB_USERNAME = 'website_user';
@@ -69,8 +68,8 @@
                     die("Connection failed: " . $db->connect_error);
                 }
                 
-                $sql = "INSERT INTO join_request (r_name, r_tag, r_team, r_referred, r_text, r_contact_info, r_contact_mean, r_status, sender_ip, sender_host_name)
-                VALUES ('$name', '$tag', $team, '$referer', '$text', '$contact', '$contact_mean', 0, '$ip', '$hostname');";
+                $sql = "INSERT INTO join_request (r_name, r_tag, r_team, r_referred, r_text, r_contact_info, r_contact_mean, r_status, sender_ip)
+                VALUES ('$name', '$tag', $team, '$referer', '$text', '$contact', '$contact_mean', 0, '$ip');";
 
                 if ($db->query($sql) === TRUE) {
                     echo "<h1>Your request has been sent</h1><br>Thank you for your interest ! You can expect to hear from us very soon.<br>You can already join the discord server, it is open to everyone !<br><br>
