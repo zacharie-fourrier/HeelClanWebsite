@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
         <script src="/Favicon.js"></script>
+        <script src="/Form_check.js"></script>
         <title>Heel Clan - Home</title>
     </head>
     <body>
@@ -32,63 +33,75 @@
             </div>
         </div>
         <div class="content">
-            <form>
+            <form name="joinRequestForm" action="/recruitment/request.php" method="post">
+                <h1>Join us and make the difference !</h1>
                 <label for="name">Full Name</label><br>
-                <input type="text" id="name" name="name" placeholder="Your name.."><br><br>
+                <input type="text" id="name" name="name" placeholder="Your name..." maxlength = "64"><br><br>
                 <label for="tag">In-game name</label><br>
-                <input type="text" id="tag" name="tag" placeholder="Your in-game name.."><br><br>
+                <input type="text" id="tag" name="tag" placeholder="Your in-game name..." maxlength = "64"><br><br>
                 <label for="team">Team</label><br>
-                <select id="team" name="team"><br><br>
+                <select id="team" name="team">
                 <?php 
                     define('DB_SERVER', '91.170.154.154:3306');
-                    define('DB_USERNAME', 'HEELZacky');
-                    define('DB_PASSWORD', 'F2F4Astg12');
+                    define('DB_USERNAME', 'website_presentation');
+                    define('DB_PASSWORD', 'T*A3gxGoBeZ(Qe1q');
                     define('DB_DATABASE', 'heel_db');
                     $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
                     $sql =
-                    "SELECT t_name FROM teams";
+                    "SELECT t_name, t_game, t_id FROM teams";
 
                     $result = mysqli_query($db, $sql);
                     while ($row = mysqli_fetch_array($result)) {
-                        echo "<option value='" . $row['t_name'] . "'>" . $row['t_name'] . "</option>";
+                        echo "<option value='" . $row['t_id'] . "'>" . $row['t_name'] . " (" . $row['t_game'] . ")</option>";
                     }
                 ?>
                 </select><br><br>
                 <fieldset>
-                    <legend>Who referred you to us ?</legend>
+                    <legend>Did someone refer you to us ?</legend>
                     <div class="label">
-                        <input type="radio" id="none" name="referer" value="none" checked>
-                        <label for="none">No one</label>
+                        <input type="radio" id="other" name="referer" value="other" checked>
+                        <label for="other">Yes : <input type="text" id="referertxt" class="inputCustom" name="txtbox" maxlength="64"></label>
                         <div class="check"><div class="inside"></div></div>
                     </div>
                     <div class="label">
                         <input type="radio" id="ag" name="referer" value="ag">
-                        <label for="ag">Alligator Gaming</label>
+                        <label for="ag">Yes, Alligator Gaming</label>
                         <div class="check"><div class="inside"></div></div>
                     </div>
                     <div class="label">
-                        <input type="radio" id="other" name="referer" value="other">
-                        <label for="other">Other : <input type="text" id="referertxt" class="inputCustom" name="txtbox" disabled="disabled"></label>
+                        <input type="radio" id="none" name="referer" value="none">
+                        <label for="none">No, nobody</label>
                         <div class="check"><div class="inside"></div></div>
-
-                        <script type="text/javascript">
-                            var referer = document.getElementById("other");
-                            var referertxt = document.getElementById("referertxt");
-                            referer.addEventListener("click", function() {
-                                referertxt.disabled = false;
-                            });
-                            var noone = document.getElementById("none");
-                            noone.addEventListener("click", function() {
-                                referertxt.disabled = true;
-                            });
-                            var ag = document.getElementById("ag");
-                            ag.addEventListener("click", function() {
-                                referertxt.disabled = true;
-                            });
-                        </script>
                     </div>
-                </fieldset>
+                    <script type="text/javascript">
+                        var referer = document.getElementById("other");
+                        var referertxt = document.getElementById("referertxt");
+                        referer.addEventListener("click", function() {
+                            referertxt.disabled = false;
+                        });
+                        var noone = document.getElementById("none");
+                        noone.addEventListener("click", function() {
+                            referertxt.disabled = true;
+                        });
+                        var ag = document.getElementById("ag");
+                        ag.addEventListener("click", function() {
+                            referertxt.disabled = true;
+                        });
+                    </script>
+                </fieldset><br><br>
+                <label for="text">Tell us about you</label><br>
+                <textarea id="text" name="text" maxlength = "512" placeholder="Write down your previous experiences, if you're a new or returning player, etc... This is only to know you better, you do not need anything in particular to join the team" style="height:200px"></textarea><br><br>
+                <label for="contact-mean">How can we contact you ?</label><br>
+                <select id="contact-mean" name="contact-mean">
+                    <option value="discord">Discord</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="messenger">Messenger</option>
+                    <option value="email">Email</option>
+                </select>
+                <input type="text" id="contact-info" name="contact" placeholder="Your contact info..." maxlength = "64">
+                <br><br>
+                <input type="button" value="Submit" onclick="validateForm()">
             </form>
         </div>
         <div class="footer">
