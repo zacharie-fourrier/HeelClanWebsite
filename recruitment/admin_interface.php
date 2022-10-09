@@ -42,7 +42,7 @@
                         $DB_DATABASE='heel_db';
                         $db = mysqli_connect($DB_SERVER,$DB_USERNAME,$DB_PASSWORD,$DB_DATABASE);
 
-                        $sql = "SELECT r_id, r_name, r_tag, r_referred, r_contact_mean, r_contact_info, r_text, teams.t_name, teams.t_game, r_team
+                        $sql = "SELECT r_id, r_name, r_tag, r_referred, r_contact_mean, r_contact_info, r_text, teams.t_name, teams.t_game, r_team, sender_ip, sender_host_name
                         FROM join_request
                         INNER JOIN teams ON join_request.r_team = teams.t_id
                         WHERE r_status = 0;";
@@ -66,6 +66,7 @@
                             echo '<p><weak>' . $data['r_text'] . '</weak></p>';
                             echo '<weak>Contact : ' . ucfirst($data['r_contact_mean']) . ' - </weak>' . $data['r_contact_info'];
                             echo '<input type="text" name="role" placeholder="Role" required>';
+                            echo $data['sender_host_name'] . '@' . $data['sender_ip'];
                             echo '</div>';
                             echo '<div class="request-footer">';
                             echo '<input type="hidden" name="team-id" value="' . $data['r_team'] . '">';
