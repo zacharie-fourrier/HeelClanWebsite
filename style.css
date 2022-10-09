@@ -130,7 +130,7 @@ html {
     font-weight: 700;
 }
 
-form {
+form[name="joinRequestForm"] {
     position: relative;
     display: block;
     margin: 10% 20%;
@@ -634,4 +634,79 @@ accent {
 .team_pannel:hover > .team_game {
     top: 50%;
     transition: 0.3s;
+}
+
+.requests {
+    display: block;
+    position: relative;
+    font-size: 30px;
+    margin: 10%;
+    width: 80%;
+}
+
+.requests.unseen {
+    display: block;
+    position: relative;
+    
+}
+
+.request-box {
+    margin: 16px 32px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    font-size: 20px;
+}
+
+.request-header {
+    background-color: #aaaaaa;
+    padding: 10px 16px;
+    border-radius: 10px 10px 0 0;
+}
+
+.request-content {
+    padding: 4px 32px;
+    border-radius: 0 0 10px 10px;
+    width: 60%;
+    display: inline-block;
+}
+
+.request-footer {
+    background-color: #e8e8e8;
+    padding: 10px 16px;
+    border-radius: 0 0 10px 10px;
+}
+
+.request-footer input {
+    background-color: #e8e8e8;
+    border: 3px solid;
+    border-radius: 20px;
+    height: 40px;
+    width: 40%;
+    padding: 0 16px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.request-footer #acceptbtn {
+    border-color: #32cd32;
+    transition: 0.3s;
+}
+
+.request-footer #acceptbtn:hover {
+    background-color: #32cd32;
+    transition: 0.3s;
+}
+
+.request-footer #rejectbtn {
+    border-color: #d30000;
+    transition: 0.3s;
+}
+
+.request-footer #rejectbtn:hover {
+    background-color: #d30000;
+    transition: 0.3s;
+}
+
+weak {
+    font-weight: 300;
 }

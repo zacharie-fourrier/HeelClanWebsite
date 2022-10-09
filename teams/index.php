@@ -76,6 +76,7 @@
                     echo '</p></div>';
                     echo '</div>';
                 }
+                mysqli_close($db);
             ?>
         </div>
         <div class="footer">

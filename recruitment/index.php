@@ -55,6 +55,7 @@
                     while ($row = mysqli_fetch_array($result)) {
                         echo "<option value='" . $row['t_id'] . "'>" . $row['t_name'] . " (" . $row['t_game'] . ")</option>";
                     }
+                    mysqli_close($db);
                 ?>
                 </select><br><br>
                 <fieldset>
@@ -65,7 +66,7 @@
                         <div class="check"><div class="inside"></div></div>
                     </div>
                     <div class="label">
-                        <input type="radio" id="ag" name="referer" value="ag">
+                        <input type="radio" id="ag" name="referer" value="alligator gaming">
                         <label for="ag">Yes, Alligator Gaming</label>
                         <div class="check"><div class="inside"></div></div>
                     </div>

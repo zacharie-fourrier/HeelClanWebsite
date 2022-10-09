@@ -12,7 +12,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
         <script src="/Favicon.js"></script>
-        <script src="/Form_check.js"></script>
         <title>Heel Clan - Home</title>
     </head>
     <body>
@@ -76,6 +75,7 @@
                 } else {
                     echo "Error: please try again later or contact us on discord.";
                 }
+                mysqli_close($db);
             ?>
             </div>
         </div>
