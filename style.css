@@ -27,6 +27,31 @@
     #ttv {color: #ffffff}
     #l_ytb {filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(132deg) brightness(101%) contrast(101%)}
     #ytb {color: #ffffff}
+    input {background: #0f0f0f}
+    textarea {background: #0f0f0f}
+    select {
+        background: #0f0f0f;
+        color: #f0f0f0;
+    }
+    input.inputCustom:not(:disabled) {border-bottom: 1px solid #7712a6}
+    input.inputCustom:disabled {border-bottom: 1px solid #f0f0f0}
+    input[type=radio]:checked ~ .check {border: 3px solid #7712a6}
+    input[type=radio]:checked ~ .check::before{background: #7712a6}
+    input[type=radio]:checked ~ label{color: #7712a6}
+    .label:hover label{color: #FFFFFF}
+    .label:hover .check {border: 3px solid #FFFFFF}
+    .label{color: #AAAAAA}
+    .label .check {border: 3px solid #AAAAAA}
+    .legal:before {
+        border-top: 1px #AAAAAA solid;
+        content: '';
+        display: block;
+        transform: scaleX(0.9);
+    }
+    input[type="button"] {
+        background: #7712a6;
+        color: #FFFFFF;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -48,6 +73,31 @@
     }
     ::-webkit-scrollbar-track {background: #b5b5b5}
     accent {color: #a602f2}
+    input {background: #e0e0e0}
+    textarea {background: #e0e0e0}
+    select {
+        background: #e0e0e0;
+        color: #0f0f0f;
+    }
+    input.inputCustom:not(:disabled) {border-bottom: 1px solid #a602f2}
+    input.inputCustom:disabled {border-bottom: 1px solid #808080}
+    input[type=radio]:checked ~ .check {border: 3px solid #a602f2}
+    input[type=radio]:checked ~ .check::before{background: #a602f2}
+    input[type=radio]:checked ~ label{color: #a602f2}
+    .label:hover label{color: #000000}
+    .label:hover .check {border: 3px solid #000000}
+    .label{color: #555555}
+    .label .check {border: 3px solid #555555}
+    .legal:before {
+        border-top: 1px #555555 solid;
+        content: '';
+        display: block;
+        transform: scaleX(0.9);
+    }
+    input[type="button"] {  
+        background: #a602f2;
+        color: #000000;
+    }
 }
 
 @font-face {
@@ -72,7 +122,6 @@
 
 body {
     margin: 0px;
-    /*overflow: hidden;*/
 }
 
 html {
@@ -81,22 +130,257 @@ html {
     font-weight: 700;
 }
 
-.menu {
+form[name="joinRequestForm"] {
+    position: relative;
+    display: block;
+    margin: 10% 20%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.inscription {
+    margin: 10% 20%;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    border: none;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 16px;
+    color: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+input#contact-info {
+    display: inline-block;
+    position: absolute;
+    width: 75%;
+    right: 0;
+}
+
+input:invalid {
+   border: 1px solid red; 
+}
+
+input.inputCustom {
+    padding-bottom: 2px;
+}
+
+input.inputCustom:invalid {
+    border-bottom: 1px solid red;
+}
+
+textarea {
+    width: 100%;
+    height: 128px;
+    border-radius: 16px;
+    border: none;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 16px;
+    color: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
     display: inline;
-    float: center;
-    align-items: center;
-    height: 100%;
+    border-radius: 8px;
+    border: none;
+    font-weight: 300;
+    font-size: 16px;
+    padding-left: 16px;
+    cursor: inherit;
+}
+
+.label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 16px;
+    display: block;
+    position: relative;
+    float: left;
     width: 100%;
 }
 
-.menu a {
-    float: left;
+.label label {
+    font-weight: inherit;
+}
+
+fieldset {
+    border: none;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+  
+.label input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+}
+  
+.label label{
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 10px 16px;
+    z-index: 8;
+    cursor: pointer;
+    transition: border .3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+  
+.label .check{
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    top: 15px;
+    left: 10px;
+    z-index: 5;
+    transition: border .3s linear;
+    -webkit-transition: border .3s linear;
+}
+  
+.label .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    top: 5px;
+    left: 5px;
+    margin: auto;
+    transition: background 0.3s linear;
+    -webkit-transition: background 0.3s linear;
+}
+
+input.inputCustom {
+    width: 60%;
+    height: 20px;
+    border: none;
+    display: inline;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 4px;
+    border-radius: 0;
+    background: none;
+    color: inherit;
+}
+
+input.inputCustom:focus {
+    outline: none;
+}
+
+input.inputCustom:not(:disabled) {
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+    transform-origin:  0% 50%;
+}
+
+input.inputCustom:disabled {
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    transform-origin:  0% 50%;
+}
+
+select {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    display: inline-block;
+    border: none;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 16px;
+    font-family: inherit;
+    margin-top: 4px;
+}
+
+select:focus {
+    outline: none;
+}
+
+select#contact-mean {
+    width: 20%;
+    display: inline;
+}
+
+label {
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    display: inline;
+    cursor: inherit;
+}
+
+legend {
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    display: inline;
+    cursor: inherit;
+}
+
+input[type="button"] {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    border: none;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 16px;
+    color: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    display: inline-block;
     text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu a {
+    position: relative;
     text-decoration: none;
-    padding: 14px 16px;
-    font-size: 17px;
-    height: 32px;
+    font-size: 20px;
     transition: 0.3s;
+    padding: 15px 20px 15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active {
     border-radius: 0px 0px 5px 5px;
     transition: 0.3s;
 }
@@ -197,12 +481,25 @@ accent {
     transition: 0.3s;
 }
 
+#l_dis {
+    transition: 0.3s;
+}
+
 #dis:hover {
     color: #7289DA;
     transition: 0.3s;
 }
 
+#dis:hover > #l_dis {
+    filter: invert(60%) sepia(10%) saturate(2476%) hue-rotate(190deg) brightness(90%) contrast(89%);
+    transition: 0.3s;
+}
+
 #twi {
+    transition: 0.3s;
+}
+
+#l_twi {
     transition: 0.3s;
 }
 
@@ -211,7 +508,16 @@ accent {
     transition: 0.3s;
 }
 
+#twi:hover > #l_twi {
+    filter: invert(57%) sepia(100%) saturate(2437%) hue-rotate(176deg) brightness(94%) contrast(101%);
+    transition: 0.3s;
+}
+
 #ins {
+    transition: 0.3s;
+}
+
+#l_ins {
     transition: 0.3s;
 }
 
@@ -220,7 +526,16 @@ accent {
     transition: 0.3s;
 }
 
+#ins:hover > #l_ins {
+    filter: invert(30%) sepia(35%) saturate(4082%) hue-rotate(317deg) brightness(90%) contrast(95%);
+    transition: 0.3s;
+}
+
 #ttv {
+    transition: 0.3s;
+}
+
+#l_ttv {
     transition: 0.3s;
 }
 
@@ -229,12 +544,26 @@ accent {
     transition: 0.3s;
 }
 
+#ttv:hover > #l_ttv {
+    filter: invert(64%) sepia(98%) saturate(6782%) hue-rotate(250deg) brightness(103%) contrast(101%);
+    transition: 0.3s;
+}
+
 #ytb {
+    transition: 0.3s;
+}
+
+#l_ytb {
     transition: 0.3s;
 }
 
 #ytb:hover {
     color: #FF0000;
+    transition: 0.3s;
+}
+
+#ytb:hover > #l_ytb {
+    filter: invert(22%) sepia(87%) saturate(6853%) hue-rotate(357deg) brightness(92%) contrast(121%);
     transition: 0.3s;
 }
 
@@ -259,18 +588,17 @@ accent {
     filter: drop-shadow(0px 0px 5px #000);
     color: #fff;
     transition: 0.3s;
+    overflow-wrap: normal;
 }
 
 .team_game {
     position: absolute;
     text-align: center;
-    font-variant: small-caps;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     filter: invert(94%) sepia(94%) saturate(25%) hue-rotate(359deg) brightness(105%) contrast(106%) drop-shadow(0px 0px 10px #000);
-    color: #fff;
     transition: 0.3s;
 }
 
@@ -281,6 +609,7 @@ accent {
     transform: translate(-50%, -50%);
     color: #fff;
     opacity: 0;
+    font-weight: 400;
     filter: drop-shadow(0px 0px 5px #000);
     transition: 0.3s;
 }
@@ -305,4 +634,79 @@ accent {
 .team_pannel:hover > .team_game {
     top: 50%;
     transition: 0.3s;
+}
+
+.requests {
+    display: block;
+    position: relative;
+    font-size: 30px;
+    margin: 10%;
+    width: 80%;
+}
+
+.requests.unseen {
+    display: block;
+    position: relative;
+    
+}
+
+.request-box {
+    margin: 16px 32px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    font-size: 20px;
+}
+
+.request-header {
+    background-color: #aaaaaa;
+    padding: 10px 16px;
+    border-radius: 10px 10px 0 0;
+}
+
+.request-content {
+    padding: 4px 32px;
+    border-radius: 0 0 10px 10px;
+    width: 60%;
+    display: inline-block;
+}
+
+.request-footer {
+    background-color: #e8e8e8;
+    padding: 10px 16px;
+    border-radius: 0 0 10px 10px;
+}
+
+.request-footer input {
+    background-color: #e8e8e8;
+    border: 3px solid;
+    border-radius: 20px;
+    height: 40px;
+    width: 40%;
+    padding: 0 16px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.request-footer #acceptbtn {
+    border-color: #32cd32;
+    transition: 0.3s;
+}
+
+.request-footer #acceptbtn:hover {
+    background-color: #32cd32;
+    transition: 0.3s;
+}
+
+.request-footer #rejectbtn {
+    border-color: #d30000;
+    transition: 0.3s;
+}
+
+.request-footer #rejectbtn:hover {
+    background-color: #d30000;
+    transition: 0.3s;
+}
+
+weak {
+    font-weight: 300;
 }

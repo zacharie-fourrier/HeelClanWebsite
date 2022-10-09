@@ -22,62 +22,62 @@
             </div>
             <div class="menu">
                 <a href="/">Home</a>
-                <a href="/teams/" class="active">Teams</a>
+                <a href="/teams/">Teams</a>
                 <a href="/results/"><strike>Results</strike></a>
                 <a href="/booking/"><strike>Book a match</strike></a>
-                <a href="/recruitment/">Join us</a>
+                <a href="/recruitment/" class="active">Join us</a>
             </div>
             <div class="account">
                 <a href="/account/"></a>
             </div>
         </div>
         <div class="content">
-            <p>
-                <br>
-                <br>
-            </p>
+            <div class="inscription">
             <?php 
-                $DB_SERVER='91.170.154.154:3306';
-                $DB_USERNAME='website_presentation';
-                $DB_PASSWORD='T*A3gxGoBeZ(Qe1q';
-                $DB_DATABASE='heel_db';
-                $db = mysqli_connect($DB_SERVER,$DB_USERNAME,$DB_PASSWORD,$DB_DATABASE);
+                $name = $_POST['name'];
+                $tag = $_POST['tag'];
+                $referer = $_POST['referer'];
+                $team = $_POST['team'];
+                if (isset($_POST['txtbox'])) {
+                    $txtbox = $_POST['txtbox'];
+                } else {
+                    $txtbox = "No";
+                }
+                if ($referer == "other") {
+                    $referer = $txtbox;
+                }
+                $text = $_POST['text'];
+                $contact = $_POST['contact'];
+                $contact_mean = $_POST['contact-mean'];
 
-                $sql = 
-                'SELECT t_id, t_banner, t_name, t_game_logo FROM teams';
+                $regex = "/\'/";
+                $regex2 = "/\"/";
 
-                $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+                $text = preg_replace($regex, "\'", $text);
+                $text = preg_replace($regex2, '\"', $text);
 
-                while($data = mysqli_fetch_assoc($req)) {
+                $DB_SERVER = '91.170.154.154:3306';
+                $DB_USERNAME = 'website_user';
+                $DB_PASSWORD = '8.Mtw)cF@1mi8X1t';
+                $DB_DATABASE = 'heel_db';
+                $db = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
 
-                    echo '<div class="team_pannel">';
-                    echo '<img src="'.$data['t_banner'].'" height="auto" width="100%">';
-                    echo '<div class="team_name">'.$data['t_name'].'</div>';
-                    echo '<img src="'.$data['t_game_logo'].'" class="team_game" width="50%", height="auto">';
-                    echo '<div class="team_member"><p>';
+                if ($db->connect_error) {
+                    die("Connection failed: " . $db->connect_error);
+                }
+                
+                $sql = "INSERT INTO join_request (r_name, r_tag, r_team, r_referred, r_text, r_contact_info, r_contact_mean, r_status)
+                VALUES ('$name', '$tag', $team, '$referer', '$text', '$contact', '$contact_mean', 0);";
 
-                    $sql2 =
-                    'SELECT teams.t_game, members.m_tag, team_members.m_role
-                    FROM teams
-                    INNER JOIN team_members ON teams.t_id = team_members.t_id
-                    INNER JOIN members ON team_members.m_id = members.m_id
-                    WHERE teams.t_id = '.$data['t_id'].'
-                    ORDER BY m_index DESC';
-
-                    $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
-
-                    $i = 0;
-
-                    while($data2 = mysqli_fetch_assoc($req2)) {
-                        if ($i <= 7) {
-                            echo $data2['m_tag'].' - '.$data2['m_role'].'<br>';
-                        }
-                    }
-                    echo '</p></div>';
-                    echo '</div>';
+                if ($db->query($sql) === TRUE) {
+                    echo "<h1>Your request has been sent</h1><br>Thank you for your interest ! You can expect to hear from us very soon.<br>You can already join the discord server, it is open to everyone !<br><br>
+                    <iframe src=\"https://discord.com/widget?id=791315477871067166&theme=dark\" width=\"100%\" height=\"400px\" allowtransparency=\"true\" frameborder=\"0\" sandbox=\"allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts\"></iframe>";
+                } else {
+                    echo "Error: please try again later or contact us on discord.";
                 }
                 mysqli_close($db);
             ?>
+            </div>
         </div>
         <div class="footer">
             <div class="info">
