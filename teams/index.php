@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Heel Clan - Teams" property="og:title" />
+        <meta content="Browse our teams' latest achievements and get to know them !" property="og:description" />
+        <meta content="http://www.heelclan.com/teams" property="og:url" />
+        <meta content="http://www.heelclan.com/img/Icon White.svg" property="og:image" />
+        <meta content="#7712a6" data-react-helmet="true" name="theme-color" />
         <link rel="icon" id="icon">
         <link rel="stylesheet" href="/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">

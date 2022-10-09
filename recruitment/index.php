@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="Heel Clan - Join Us" property="og:title" />
+        <meta content="The inscription page to apply for a position in the Heel Clan" property="og:description" />
+        <meta content="http://www.heelclan.com/recruitment" property="og:url" />
+        <meta content="http://www.heelclan.com/img/Icon White.svg" property="og:image" />
+        <meta content="#7712a6" data-react-helmet="true" name="theme-color" />
         <link rel="icon" id="icon">
         <link rel="stylesheet" href="/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
