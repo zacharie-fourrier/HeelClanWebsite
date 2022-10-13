@@ -91,7 +91,8 @@
                         $sql = "SELECT r_id, r_name, r_tag, r_referred, r_status, r_contact_mean, r_contact_info, r_text, teams.t_name, teams.t_game, r_team, sender_ip
                         FROM join_request
                         INNER JOIN teams ON join_request.r_team = teams.t_id
-                        WHERE r_status != 0;";
+                        WHERE r_status != 0;
+                        ORDER BY r_id DESC;";
 
                         $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
