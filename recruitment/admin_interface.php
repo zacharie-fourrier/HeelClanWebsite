@@ -110,7 +110,7 @@
                             echo '<weak>Applies to </weak>' .$data['t_name'] . '<weak> (' . $data['t_game'] . ')</weak> :';
                             echo '<p><weak>' . $data['r_text'] . '</weak></p>';
                             echo '<weak>Contact : ' . ucfirst($data['r_contact_mean']) . ' - </weak>' . $data['r_contact_info'];
-                            echo $data['sender_ip'];
+                            echo '<br>'.$data['sender_ip'];
                             echo '</div>';
                             echo '<div class="request-footer">';
                             if ($data['r_status'] == 1) {
