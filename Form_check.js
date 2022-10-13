@@ -62,8 +62,8 @@ function validateForm() {
     }
 
     name.toLowerCase();
-    let Vname = name.replace(/[^a-z|\ ]/g, "");
-    if (Vname.search(/^[a-z]+\ [a-z]+$/g) == -1) {
+    let Vname = name.replace(/[^a-z|\ ]/gi, "");
+    if (Vname.search(/^[a-z]+\ [a-z]+$/gi) == -1) {
         form["name"].setCustomValidity("invalid");
         firstInvalid = form["name"];
     } else {
