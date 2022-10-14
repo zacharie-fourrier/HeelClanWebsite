@@ -15,7 +15,7 @@
     if ($role == "Player") {$index=3;}
     if ($role == "Substitute") {$index=1;}
 
-    if ($choice == 'Accepted') { // If the request is accepted
+    if ($choice == 'Accept') { // If the request is accepted
         $sql = "SELECT * FROM members WHERE m_tag = '$tag'"; // Check if the member already exists
 
         $req = $db->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
@@ -26,7 +26,7 @@
             $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
         } else {
             $sql2 = "INSERT INTO members (m_tag) VALUES ('$tag'); // Add the member to the members table
-            SELECT * FROM members WHERE m_tag = '$tag';";
+            SELECT * FROM members WHERE m_tag = '$tag';"; //gets the id of the new member
 
             $req2 = $db->query($sql2) or die('Erreur SQL !<br>'.$sql2.'<br>'.mysql_error());
             if ($data2 = mysqli_fetch_assoc($req2)) {

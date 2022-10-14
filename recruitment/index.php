@@ -40,11 +40,11 @@
         <div class="content">
             <form name="joinRequestForm" action="/recruitment/request.php" method="post">
                 <h1>Join us and make the difference !</h1>
-                <label for="name">Full Name</label><br>
+                <label for="name">Full Name<image title="First-name Surname" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></label><br>
                 <input type="text" id="name" name="name" placeholder="Your name..." maxlength = "64"><br><br>
-                <label for="tag">In-game name</label><br>
+                <label for="tag">In-game name<image title="Your nickname (without extension)" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></label><br>
                 <input type="text" id="tag" name="tag" placeholder="Your in-game name..." maxlength = "64"><br><br>
-                <label for="team">Team</label><br>
+                <label for="team">Team<image title="The team you wish to join" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></label><br>
                 <select id="team" name="team">
                 <?php 
                     define('DB_SERVER', '91.170.154.154:3306');
@@ -64,7 +64,7 @@
                 ?>
                 </select><br><br>
                 <fieldset>
-                    <legend>Did someone refer you to us ?</legend>
+                    <legend>Did someone refer you to us ?<image title="Just write their nickname, or not" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></legend>
                     <div class="label">
                         <input type="radio" id="other" name="referer" value="other" checked>
                         <label for="other">Yes : <input type="text" id="referertxt" class="inputCustom" name="txtbox" maxlength="64"></label>
@@ -96,9 +96,9 @@
                         });
                     </script>
                 </fieldset><br><br>
-                <label for="text">Tell us about you</label><br>
+                <label for="text">Tell us about you<image title="Tell us anything you feel we should know about you" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></label><br>
                 <textarea id="text" name="text" maxlength = "512" placeholder="Write down your previous experiences, if you're a new or returning player, etc... This is only to know you better, you do not need anything in particular to join the team" style="height:200px"></textarea><br><br>
-                <label for="contact-mean">How can we contact you ?</label><br>
+                <label for="contact-mean">How can we contact you ?<image title="Your favorite mean of contact, you can expect us to contact you within a day" id="info_icon" src="/img/info_icon.svg" height="20px" width="auto"></label><br>
                 <select id="contact-mean" name="contact-mean">
                     <option value="discord">Discord</option>
                     <option value="instagram">Instagram</option>

@@ -17,6 +17,7 @@ function validateForm() {
             }
             break;
         case "instagram":
+            c_info.replace(/@/g, "");
             if (c_info.search(/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/g) == -1) {
                 form["contact-info"].setCustomValidity("invalid");
                 firstInvalid = form["contact-info"];

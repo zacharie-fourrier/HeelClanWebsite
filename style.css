@@ -1,7 +1,21 @@
 @media (prefers-color-scheme: dark) {
+    :root {
+        --color-fr1: #000000;
+        --color-fr2: #030303;
+        --color-fr3: #0f0f0f;
+        --color-fr4: #171717;
+        --color-fr5: #1e1e1e;
+        --color-bg1: #ffffff;
+        --color-bg2: #f2f2f2;
+        --color-bg3: #e0e0e0;
+        --color-bg4: #aaaaaa;
+        --color-bg5: #808080;
+        --color-sp1: #7712a6;
+        --color-sp2: #a12b9a;
+    }
     .navbar {
-        background: #1e1e1e;
-        box-shadow: 0px 1px 10px #000000;
+        background: var(--color-bg5);
+        box-shadow: 0px 1px 10px var(--color-bg1);
     }
     .content {color: #fff}
     body {background: #1e1e1e}
@@ -53,12 +67,27 @@
         color: #FFFFFF;
     }    
     .request-box {background-color: #0f0f0f}
-    .request-header {background-color: #555555}
+    .request-header {background-color: #030303}
     .request-footer {background-color: #171717}
     .request-footer input {background-color: #171717}
+    #info_icon {filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(165deg) brightness(106%) contrast(101%)}
 }
 
 @media (prefers-color-scheme: light) {
+    :root {
+        --color-fr1: #000000;
+        --color-fr2: #030303;
+        --color-fr3: #0f0f0f;
+        --color-fr4: #171717;
+        --color-fr5: #1e1e1e;
+        --color-bg1: #ffffff;
+        --color-bg2: #f2f2f2;
+        --color-bg3: #e0e0e0;
+        --color-bg4: #aaaaaa;
+        --color-bg5: #808080;
+        --color-sp1: #7712a6;
+        --color-sp2: #a12b9a;
+    }
     .navbar {
         background: #f2f2f2;
         box-shadow: 0px 1px 10px #808080;
@@ -70,7 +99,7 @@
         transition: 0.3s;
     }
     .menu a{color: #1e1e1e}
-    .active{background-color: #a602f2}
+    .active{background-color: var(--color-sp2)}
     .footer{
         color:#000000;
         background-color: #ffffff;
@@ -345,6 +374,13 @@ label {
     cursor: inherit;
 }
 
+#info_icon {
+    position: relative;
+    margin-left: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
 legend {
     padding-left: 16px;
     font-weight: 400;
@@ -593,10 +629,13 @@ accent {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 28px;
+    text-shadow: 0px 0px 10px #000, 0 0 5px #000;
     filter: drop-shadow(0px 0px 5px #000);
     color: #fff;
     transition: 0.3s;
-    overflow-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .team_game {
@@ -618,7 +657,11 @@ accent {
     color: #fff;
     opacity: 0;
     font-weight: 400;
+    text-shadow: 0px 0px 10px #000, 0 0 5px #000;
     filter: drop-shadow(0px 0px 5px #000);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     transition: 0.3s;
 }
 
